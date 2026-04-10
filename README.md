@@ -170,3 +170,6 @@ This project follows the **Page Object Model (POM)** pattern to keep the code cl
 **StoreFront Admin Panel**
 - URL: https://qa-assessment-ten.vercel.app/
 - Pages tested: Overview, Products, Cart, Orders, Order Detail
+
+## BUG Report Manual 
+Spreadsheet -> https://docs.google.com/spreadsheets/d/1kxOnldWNDQTrdHDtR8AMlOns4QyWAkKhObmdsvqn-8w/edit?usp=sharing
