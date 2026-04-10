@@ -26,9 +26,10 @@ assestment_tiara/
 ├── variables/
 │   └── common_variables.robot     # Global variables (URL, browser, timeout)
 ├── tests/
-│   ├── AllMenu.robot              # TC - Navigation menu
+│   ├── AllMenu.robot              # TC - Navigation menu & homepage
 │   ├── OverviewPage.robot         # TC - Overview page
 │   ├── ProductsPage.robot         # TC - Products page (add, edit, cart, order)
+│   ├── SearchProducts.robot       # TC - Search & sort products
 │   ├── OrdersPage.robot           # TC - Orders page elements
 │   └── OrdersDetailsPage.robot    # TC - Order detail page
 └── README.md
@@ -83,6 +84,7 @@ source venv/bin/activate
 robot tests/AllMenu.robot
 robot tests/OverviewPage.robot
 robot tests/ProductsPage.robot
+robot tests/SearchProducts.robot
 robot tests/OrdersPage.robot
 robot tests/OrdersDetailsPage.robot
 ```
@@ -99,6 +101,7 @@ robot tests/
 ### 📌 AllMenu.robot — Navigation
 | TC | Description |
 |---|---|
+| TC01 | Succeed open homepage and verify main elements |
 | TC02 | Succeed navigate to Products Page |
 | TC03 | Succeed navigate to Orders Page |
 | TC04 | Succeed navigate to Cart Page |
@@ -118,6 +121,13 @@ robot tests/
 | TC05 | Add product to cart and verify product appears in Cart |
 | TC06 | Verify products not added do not appear in Cart |
 | TC07 | Place order successfully with shipping details |
+
+### 📌 SearchProducts.robot — Search & Sort
+| TC | Description |
+|---|---|
+| TC01 | Search product by keyword and verify correct result appears |
+| TC02 | Sort products by Price column and verify products still visible |
+| TC03 | Sort products by Stock column and verify products still visible |
 
 ### 📌 OrdersPage.robot — Orders List
 | TC | Description |

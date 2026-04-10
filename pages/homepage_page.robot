@@ -19,10 +19,10 @@ ${PRODUCTS_TITTLE_PAGE}         xpath=//h1[text()='Products']
 ${ADD_PRODUCT_BUTTON}           xpath=//a[@href='/products/new']
 
 #Product - Filter Product Type
-${TAB_ALL}                      xpath=//button[text()='All']
-${TAB_ELECTRONICS}            xpath=//button[text()='Electronics']
-${TAB_FURNITURE}                xpath=//button[text()='Furniture']
-${TAB_ACCESSORIES}              xpath=//button[text()='Accessories']
+${TAB_ELECTRONICS}              xpath=//button[normalize-space()='Electronics']
+${TAB_FURNITURE}                xpath=//button[normalize-space()='Furniture']
+${TAB_ACCESSORIES}              xpath=//button[normalize-space()='Accessories']
+${TAB_ALL}                      xpath=//button[normalize-space()='All']
 
 #Product - Filter 
 ${HEADER_NAME}                  xpath=//th[text()='Name']
@@ -188,5 +188,9 @@ ${ORDER_DETAIL_HEADER_SUBTOTAL}     xpath=//th[text()='Subtotal']
 ${ORDER_DETAIL_ITEM_1}              xpath=//td[contains(text(),'Wireless Bluetooth Headphones')]
 ${ORDER_DETAIL_ITEM_2}              xpath=//td[contains(text(),'USB-C Charging Cable 2m')]
 ${ORDER_DETAIL_TOTAL}               xpath=//td[text()='Total']/following-sibling::td[last()]
+
+# Search - tambahkan ke pages/homepage_page.robot
+${SEARCH_INPUT}                     xpath=//input[@placeholder='Search...']
+
 
 

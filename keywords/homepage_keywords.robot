@@ -30,7 +30,8 @@ Go To Products Page
     Click Element    ${PRODUCTS_MENU}
 
 Verify Products Page
-    Wait Until Page Contains    ${PRODUCTS_TITTLE_PAGE}     timeout=${TIMEOUT}
+    Wait Until Element Is Visible    ${PRODUCTS_TITTLE_PAGE}    timeout=${TIMEOUT}
+    Element Should Be Visible        ${PRODUCTS_TITTLE_PAGE}
 
 Verify Current URL Products Page
     ${current_url}=    Get Location
@@ -369,3 +370,46 @@ Click Back To Orders
     Wait Until Element Is Visible    ${ORDER_DETAIL_BACK_BTN}    timeout=${TIMEOUT}
     Click Element                    ${ORDER_DETAIL_BACK_BTN}
     Wait Until Element Is Visible    ${ORDERS_TITTLE}            timeout=${TIMEOUT}
+
+Search Product
+    [Arguments]    ${keyword}
+    Wait Until Element Is Visible    ${SEARCH_INPUT}    timeout=${TIMEOUT}
+    Clear Element Text               ${SEARCH_INPUT}
+    Input Text                       ${SEARCH_INPUT}    ${keyword}
+    Sleep    1s
+
+Verify Search Result Visible
+    [Arguments]    ${product_name}
+    Wait Until Element Is Visible    xpath=//a[normalize-space()='${product_name}']    timeout=${TIMEOUT}
+    Element Should Be Visible        xpath=//a[normalize-space()='${product_name}']
+
+Verify Search Result Not Visible
+    [Arguments]    ${product_name}
+    Element Should Not Be Visible    xpath=//a[normalize-space()='${product_name}']
+
+Clear Search
+    Wait Until Element Is Visible    ${SEARCH_INPUT}    timeout=${TIMEOUT}
+    Clear Element Text               ${SEARCH_INPUT}
+    Sleep    1s
+
+Click Filter Tab
+    [Arguments]    ${tab_xpath}
+    Go To Products Page
+    Wait Until Element Is Visible    ${tab_xpath}    timeout=${TIMEOUT}
+    Click Element                    ${tab_xpath}
+    Sleep    1s
+
+Verify Product Visible After Filter
+    [Arguments]    ${product_name}
+    Wait Until Element Is Visible    xpath=//a[normalize-space()='${product_name}']    timeout=${TIMEOUT}
+    Element Should Be Visible        xpath=//a[normalize-space()='${product_name}']
+
+Verify Product Not Visible After Filter
+    [Arguments]    ${product_name}
+    Element Should Not Be Visible    xpath=//a[normalize-space()='${product_name}']
+
+Click Sort Column
+    [Arguments]    ${column_xpath}
+    Wait Until Element Is Visible    ${column_xpath}    timeout=${TIMEOUT}
+    Click Element                    ${column_xpath}
+    Sleep    1s

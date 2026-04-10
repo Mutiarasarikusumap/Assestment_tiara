@@ -5,7 +5,7 @@ Suite Teardown    Close Browser
 
 *** Test Cases ***
 
-TC01 - Verifikasi Semua Elemen Halaman Orders
+TC01 - Verify All Elements on Orders Page
     Go To Orders Page
     Wait Until Element Is Visible    ${ORDERS_TITTLE}    timeout=${TIMEOUT}
     ${current_url}=    Get Location
@@ -16,7 +16,7 @@ TC01 - Verifikasi Semua Elemen Halaman Orders
     Check Orders List
     Check Orders View Buttons
 
-TC02 - View Detail Order ORD-1001 Dan Verifikasi
+TC02 - View Order Detail ORD-1001 and Verify
     Go To Orders Page
     Wait Until Element Is Visible    ${ORDERS_TITTLE}    timeout=${TIMEOUT}
     Click View Order    ORD-1001
